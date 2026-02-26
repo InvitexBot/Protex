@@ -1,0 +1,77 @@
+syntax = "proto3";
+
+package banner.v1;
+
+// -----------------------------
+// ENUMS
+// -----------------------------
+
+enum BannexFonts {
+    DEFAULT = 1;
+    KAUSHAN_SCRIPT = 2;
+    LOBSTER = 3;
+    MERRI_WEATHER = 4;
+    OPEN_SANS = 5;
+    OSWALD = 6;
+    PACIFICO = 7;
+    PLAYFAIR = 8;
+    ROBOTO = 9;
+}
+
+enum Alignment {
+  LEFT = 1;
+  CENTER = 2;
+  RIGHT = 3;
+}
+
+enum AvatarShape {
+  CIRCLE = 1;
+  SQUARE = 2;
+}
+
+// -----------------------------
+// Types
+// -----------------------------
+
+message BannerConfig {
+    bool banner_enabled
+    string banner_url
+    string banner_solid_colour
+    bool banner_border_enabled
+    string banner_border_colour
+    int banner_border_width
+
+    bool text_enabled
+    string text_message
+    string text_message_colour
+    BannexFonts text_message_font
+    BannexFonts text_name_font
+    bool text_border_enabled
+    string text_border_colour
+    int text_border_width
+
+    bool avatar_enabled
+    AvatarShape avatar_shape
+    bool avatar_border_enabled
+    string avatar_border_colour
+    int avatar_border_width
+}
+
+// -----------------------------
+// REQUEST
+// -----------------------------
+
+message BannerRequest {
+  BannerConfig config = 1;
+  bytes avatar = 2;
+  string name = 3;
+}
+
+// -----------------------------
+// RESPONSE
+// -----------------------------
+
+message BannerResponse {
+  string redis_key = 1;
+  string content_type = 2;
+}
