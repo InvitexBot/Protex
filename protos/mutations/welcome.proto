@@ -1,7 +1,5 @@
 syntax = "proto3";
 
-package welcome;
-
 message SendWelcomeRequest {
   int64 guild_id = 1;
   int64 channel_id = 2;
