@@ -71,3 +71,7 @@ message BannerResponse {
   string redis_key    = 1;
   string content_type = 2;
 }
+
+message BannexFontsResponse {
+  repeated string fonts = 1;
+}

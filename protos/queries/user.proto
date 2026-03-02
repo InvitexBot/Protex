@@ -1,5 +1,9 @@
 syntax = "proto3";
 
+// -----------------------------
+// REQUESTS
+// -----------------------------
+
 message UserRequest {
   int64 user_id = 1;
 }
@@ -7,4 +11,28 @@ message UserRequest {
 message MutualGuildsRequest {
   int64          user_id   = 1;
   repeated int64 guild_ids = 2;
+}
+
+// -----------------------------
+// RESPONSES
+// -----------------------------
+
+message UserInfoResponse {
+  string          id            = 1;
+  string          name          = 2;
+  optional string display_name  = 3;
+  string          discriminator = 4;
+  optional string avatar        = 5;
+  string          created_at    = 6;
+}
+
+message MutualGuildInfo {
+  string          id       = 1;
+  string          name     = 2;
+  optional string icon_url = 3;
+  bool            allowed  = 4;
+}
+
+message MutualGuildsResponse {
+  repeated MutualGuildInfo guilds = 1;
 }
