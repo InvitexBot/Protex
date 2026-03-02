@@ -9,10 +9,6 @@ message CommandMetric {
   string command  = 2;
 }
 
-message GuildCountMetric {
-  int32 count = 1;
-}
-
 message BlockingActiveMetric {
   bool is_active = 1;
 }
