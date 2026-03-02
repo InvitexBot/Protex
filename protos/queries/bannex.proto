@@ -5,21 +5,21 @@ syntax = "proto3";
 // -----------------------------
 
 enum BannexFonts {
-    DEFAULT = 0;
-    KAUSHAN_SCRIPT = 1;
-    LOBSTER = 2;
-    MERRI_WEATHER = 3;
-    OPEN_SANS = 4;
-    OSWALD = 5;
-    PACIFICO = 6;
-    PLAYFAIR = 7;
-    ROBOTO = 8;
+  DEFAULT        = 0;
+  KAUSHAN_SCRIPT = 1;
+  LOBSTER        = 2;
+  MERRI_WEATHER  = 3;
+  OPEN_SANS      = 4;
+  OSWALD         = 5;
+  PACIFICO       = 6;
+  PLAYFAIR       = 7;
+  ROBOTO         = 8;
 }
 
 enum Alignment {
-  LEFT = 0;
+  LEFT   = 0;
   CENTER = 1;
-  RIGHT = 2;
+  RIGHT  = 2;
 }
 
 enum AvatarShape {
@@ -32,27 +32,25 @@ enum AvatarShape {
 // -----------------------------
 
 message BannerConfig {
-    bool banner_enabled = 1;
-    string banner_url = 2;
-    string banner_solid_colour = 3;
-    bool banner_border_enabled = 4;
-    string banner_border_colour = 5;
-    int64 banner_border_width = 6;
-
-    bool text_enabled = 7;
-    string text_message = 8;
-    string text_message_colour = 9;
-    BannexFonts text_message_font = 10;
-    BannexFonts text_name_font = 11;
-    bool text_border_enabled = 12;
-    string text_border_colour = 13;
-    int64 text_border_width = 14;
-
-    bool avatar_enabled = 15;
-    AvatarShape avatar_shape = 16;
-    bool avatar_border_enabled = 17;
-    string avatar_border_colour = 18;
-    int64 avatar_border_width = 19;
+  bool        banner_enabled        = 1;
+  string      banner_url            = 2;
+  string      banner_solid_colour   = 3;
+  bool        banner_border_enabled = 4;
+  string      banner_border_colour  = 5;
+  int64       banner_border_width   = 6;
+  bool        text_enabled          = 7;
+  string      text_message          = 8;
+  string      text_message_colour   = 9;
+  BannexFonts text_message_font     = 10;
+  BannexFonts text_name_font        = 11;
+  bool        text_border_enabled   = 12;
+  string      text_border_colour    = 13;
+  int64       text_border_width     = 14;
+  bool        avatar_enabled        = 15;
+  AvatarShape avatar_shape          = 16;
+  bool        avatar_border_enabled = 17;
+  string      avatar_border_colour  = 18;
+  int64       avatar_border_width   = 19;
 }
 
 // -----------------------------
@@ -61,8 +59,8 @@ message BannerConfig {
 
 message BannerRequest {
   BannerConfig config = 1;
-  bytes avatar = 2;
-  string name = 3;
+  bytes        avatar = 2;
+  string       name   = 3;
 }
 
 // -----------------------------
@@ -70,6 +68,6 @@ message BannerRequest {
 // -----------------------------
 
 message BannerResponse {
-  string redis_key = 1;
+  string redis_key    = 1;
   string content_type = 2;
 }
