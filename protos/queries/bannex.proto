@@ -1,9 +1,5 @@
 syntax = "proto3";
 
-// -----------------------------
-// ENUMS
-// -----------------------------
-
 enum BannexFonts {
   DEFAULT        = 0;
   KAUSHAN_SCRIPT = 1;
@@ -27,10 +23,6 @@ enum AvatarShape {
   SQUARE = 1;
 }
 
-// -----------------------------
-// Types
-// -----------------------------
-
 message BannerConfig {
   bool        banner_enabled        = 1;
   string      banner_url            = 2;
@@ -53,19 +45,11 @@ message BannerConfig {
   int64       avatar_border_width   = 19;
 }
 
-// -----------------------------
-// REQUEST
-// -----------------------------
-
 message BannerRequest {
   BannerConfig config = 1;
   bytes        avatar = 2;
   string       name   = 3;
 }
-
-// -----------------------------
-// RESPONSE
-// -----------------------------
 
 message BannerResponse {
   string redis_key    = 1;

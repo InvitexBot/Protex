@@ -10,8 +10,6 @@ message GuildInfoResponse {
   optional string icon_url = 3;
 }
 
-// --- Welcome Config (nested) ---
-
 message Border {
   bool   enabled = 1;
   string colour  = 2;
@@ -47,15 +45,11 @@ message WelcomeConfigResponse {
   AvatarSettings  avatar     = 4;
 }
 
-// --- Guild Config ---
-
 message GuildConfigResponse {
   string                         guild_id    = 1;
   bool                           ignore_bots = 2;
   optional WelcomeConfigResponse welcome     = 3;
 }
-
-// --- Channels ---
 
 message CategoryInfo {
   string name     = 1;
@@ -74,8 +68,6 @@ message GuildChannelsResponse {
   repeated CategoryInfo categories = 1;
   repeated ChannelInfo  channels   = 2;
 }
-
-// --- Command History ---
 
 message CommandUsageEntry {
   string command_name  = 1;
