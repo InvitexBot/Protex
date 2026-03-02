@@ -29,3 +29,18 @@ message BlockingEventMetric {
 message BlockingSecondsMetric {
   double seconds = 1;
 }
+
+message BlockingCheckMetric {
+  double check_timestamp   = 1;
+  bool   was_blocked       = 2;
+  double threshold_seconds = 3;
+}
+
+message LoopLatencyMetric {
+  double latency_seconds = 1;
+}
+
+message MonitorStatusMetric {
+  string status      = 1;
+  string thread_name = 2;
+}
