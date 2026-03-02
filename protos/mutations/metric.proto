@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+message GuildMetric {
+  int64 guild_id = 1;
+}
+
+message CommandMetric {
+  int64  guild_id = 1;
+  string command  = 2;
+}
+
+message GuildCountMetric {
+  int32 count = 1;
+}
+
+message BlockingActiveMetric {
+  bool is_active = 1;
+}
+
+message BlockingDurationMetric {
+  double time = 1;
+}
+
+message BlockingEventMetric {
+  string event = 1;
+  string cause = 2;
+}
+
+message BlockingSecondsMetric {
+  double seconds = 1;
+}
