@@ -1,16 +1,8 @@
 syntax = "proto3";
 
-// -----------------------------
-// REQUEST
-// -----------------------------
-
 message GuildRequest {
   int64 guild_id = 1;
 }
-
-// -----------------------------
-// RESPONSES
-// -----------------------------
 
 message GuildInfoResponse {
   string          id       = 1;
