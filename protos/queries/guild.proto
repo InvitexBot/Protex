@@ -10,39 +10,11 @@ message GuildInfoResponse {
   optional string icon_url = 3;
 }
 
-message Border {
-  bool   enabled = 1;
-  string colour  = 2;
-  int32  width   = 3;
-}
-
-message BannerSettings {
-  bool            enabled      = 1;
-  optional string url          = 2;
-  string          solid_colour = 3;
-  Border          border       = 4;
-}
-
-message TextSettings {
-  bool   enabled        = 1;
-  string message        = 2;
-  string message_colour = 3;
-  string message_font   = 4;
-  string name_font      = 5;
-  Border border         = 6;
-}
-
-message AvatarSettings {
-  bool   enabled = 1;
-  string shape   = 2;
-  Border border  = 3;
-}
-
 message WelcomeConfigResponse {
-  optional string channel_id = 1;
-  BannerSettings  banner     = 2;
-  TextSettings    text       = 3;
-  AvatarSettings  avatar     = 4;
+  optional string channel_id     = 1;
+  bool            banner_enabled = 2;
+  string          text_message   = 3;
+  string          canvas_config  = 4;
 }
 
 message GuildConfigResponse {
