@@ -2,13 +2,7 @@ syntax = "proto3";
 
 import "google/protobuf/struct.proto";
 
-message UpdateSettingRequest {
-  int64                 guild_id = 1;
-  string                setting  = 2;
-  google.protobuf.Value value    = 3;
-}
-
-message UpdateBatchRequest {
+message UpdateConfigRequest {
   int64                              guild_id = 1;
   map<string, google.protobuf.Value> config   = 2;
 }
