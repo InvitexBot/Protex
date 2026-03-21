@@ -41,7 +41,7 @@ message LayerDef {
   float           rotation      = 4;
   string          fill          = 5;
   LayerStroke     stroke        = 6;
-  repeated string border_radius = 7;
+  repeated uint32 border_radius = 7;
   LayerTypography typography    = 8;
   string          value         = 9;
   bool            inverted_x    = 10;
