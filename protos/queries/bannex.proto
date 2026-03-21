@@ -58,8 +58,9 @@ message CanvasDef {
 message ImageGenerateRequest {
   CanvasDef         canvas = 1;
   repeated LayerDef layers = 2;
-  bytes             avatar = 3;
-  string            name   = 4;
+
+  reserved 3, 4;
+  reserved "avatar", "name";
 }
 
 message BannerResponse {
