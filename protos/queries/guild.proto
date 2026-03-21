@@ -10,11 +10,29 @@ message GuildInfoResponse {
   optional string icon_url = 3;
 }
 
+message WelcomeMessageResponse {
+  optional string content                 = 1;
+  bool            embed_enabled           = 2;
+  optional string embed_title             = 3;
+  optional string embed_description       = 4;
+  optional string embed_url               = 5;
+  optional string embed_colour            = 6;
+  optional string embed_image_url         = 7;
+  optional string embed_thumbnail_url     = 8;
+  optional string embed_author_name       = 9;
+  optional string embed_author_url        = 10;
+  optional string embed_author_icon_url   = 11;
+  optional string embed_footer_text       = 12;
+  optional string embed_footer_icon_url   = 13;
+  bool            embed_timestamp_enabled = 14;
+  optional string embed_fields            = 15;
+}
+
 message WelcomeConfigResponse {
-  optional string channel_id     = 1;
-  bool            banner_enabled = 2;
-  string          text_message   = 3;
-  string          canvas_config  = 4;
+  optional string                 channel_id     = 1;
+  bool                            banner_enabled = 2;
+  string                          canvas_config  = 3;
+  optional WelcomeMessageResponse message        = 4;
 }
 
 message GuildConfigResponse {
