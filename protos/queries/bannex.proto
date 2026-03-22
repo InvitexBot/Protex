@@ -64,6 +64,7 @@ message ImageGenerateRequest {
 }
 
 message BannerResponse {
-  string redis_key    = 1;
-  string content_type = 2;
+  reserved 1, 2;
+  reserved "redis_key", "content_type";
+  string public_url = 3;
 }
