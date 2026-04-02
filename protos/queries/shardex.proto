@@ -16,3 +16,63 @@ message TotalShardsResponse {
 message ClusterShardsResponse {
   repeated int32 shards = 1;
 }
+
+message SetTotalShardsRequest {
+  int32 total_shards = 1;
+}
+
+message ShardIdRequest {
+  int32 shard_id = 1;
+}
+
+message TtlRequest {
+  int32 cluster_id  = 1;
+  int32 ttl_seconds = 2;
+}
+
+message SaveShardAssignmentRequest {
+  int32          cluster_id = 1;
+  repeated int32 shard_ids  = 2;
+}
+
+message BoolResponse {
+  bool value = 1;
+}
+
+message Int32ListResponse {
+  repeated int32 values = 1;
+}
+
+message ShardOwnerResponse {
+  int32 cluster_id = 1;
+  bool  has_owner  = 2;
+}
+
+message ClusterLastSeenResponse {
+  string iso_timestamp = 1;
+  bool   has_value     = 2;
+}
+
+message ShardOwnerEntry {
+  int32 shard_id   = 1;
+  int32 cluster_id = 2;
+}
+
+message ShardAssignmentMapResponse {
+  repeated ShardOwnerEntry entries = 1;
+}
+
+message GuildIdRequest {
+  int64 guild_id = 1;
+}
+
+message ClusterForGuildResponse {
+  int32 cluster_id = 1;
+  int32 shard_id   = 2;
+  bool  known      = 3;
+}
+
+message ReportClusterGuildsRequest {
+  int32          cluster_id = 1;
+  repeated int64 guild_ids  = 2;
+}
