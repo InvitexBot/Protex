@@ -26,6 +26,23 @@ message WelcomeMessageResponse {
   optional string embed_footer_icon_url   = 13;
   bool            embed_timestamp_enabled = 14;
   optional string embed_fields            = 15;
+  bool            dm_enabled              = 16;
+  bool            dm_use_channel_message  = 17;
+  optional string dm_content              = 18;
+  bool            dm_embed_enabled        = 19;
+  optional string dm_embed_title          = 20;
+  optional string dm_embed_description    = 21;
+  optional string dm_embed_url            = 22;
+  optional string dm_embed_colour         = 23;
+  optional string dm_embed_image_url      = 24;
+  optional string dm_embed_thumbnail_url  = 25;
+  optional string dm_embed_author_name    = 26;
+  optional string dm_embed_author_url     = 27;
+  optional string dm_embed_author_icon_url = 28;
+  optional string dm_embed_footer_text    = 29;
+  optional string dm_embed_footer_icon_url = 30;
+  bool            dm_embed_timestamp_enabled = 31;
+  optional string dm_embed_fields         = 32;
 }
 
 message WelcomeConfigResponse {

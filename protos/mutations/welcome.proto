@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 message SendWelcomeRequest {
-  int64 guild_id   = 1;
-  int64 channel_id = 2;
-  int64 user_id    = 3;
+  int64           guild_id   = 1;
+  optional int64  channel_id = 2;
+  int64           user_id    = 3;
 }
