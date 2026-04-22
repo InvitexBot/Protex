@@ -50,6 +50,7 @@ message WelcomeConfigResponse {
   bool                            banner_enabled = 2;
   string                          canvas_config  = 3;
   optional WelcomeMessageResponse message        = 4;
+  bool                            enabled        = 5;
 }
 
 message GuildConfigResponse {
