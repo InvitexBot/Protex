@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message AnalyticsEvent {
+  string            event_type   = 1;
+  int64             guild_id     = 2;
+  int64             user_id      = 3;
+  int64             channel_id   = 4;
+  int64             timestamp_ms = 5;
+  map<string, string> properties = 6;
+}
+
+message AnalyticsEventBatch {
+  repeated AnalyticsEvent events = 1;
+}

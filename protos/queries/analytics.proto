@@ -1,0 +1,113 @@
+syntax = "proto3";
+
+message TimeRange {
+  int64 start_ms = 1;
+  int64 end_ms   = 2;
+}
+
+message EventQueryRequest {
+  int64           guild_id    = 1;
+  repeated string event_types = 2;
+  TimeRange       time_range  = 3;
+  optional int64  user_id     = 4;
+  int32           limit       = 5;
+  int32           offset      = 6;
+}
+
+message EventRow {
+  string              event_type   = 1;
+  int64               guild_id     = 2;
+  int64               user_id      = 3;
+  int64               channel_id   = 4;
+  int64               timestamp_ms = 5;
+  map<string, string> properties   = 6;
+}
+
+message EventQueryResponse {
+  repeated EventRow events      = 1;
+  int64             total_count = 2;
+}
+
+message TimeseriesRequest {
+  int64           guild_id    = 1;
+  repeated string event_types = 2;
+  TimeRange       time_range  = 3;
+  string          granularity = 4;
+}
+
+message TimeseriesBucket {
+  int64  timestamp_ms = 1;
+  int64  count        = 2;
+  string event_type   = 3;
+}
+
+message TimeseriesResponse {
+  repeated TimeseriesBucket buckets = 1;
+}
+
+message CountRequest {
+  int64           guild_id    = 1;
+  repeated string event_types = 2;
+  TimeRange       time_range  = 3;
+  optional int64  user_id     = 4;
+}
+
+message EventCount {
+  string event_type = 1;
+  int64  count      = 2;
+}
+
+message CountResponse {
+  int64               total   = 1;
+  repeated EventCount by_type = 2;
+}
+
+message FunnelRequest {
+  int64           guild_id   = 1;
+  repeated string steps      = 2;
+  TimeRange       time_range = 3;
+}
+
+message FunnelStep {
+  string event_type      = 1;
+  int64  unique_users    = 2;
+  double conversion_rate = 3;
+}
+
+message FunnelResponse {
+  repeated FunnelStep steps = 1;
+}
+
+message TopRequest {
+  int64     guild_id   = 1;
+  string    event_type = 2;
+  TimeRange time_range = 3;
+  string    group_by   = 4;
+  int32     limit      = 5;
+}
+
+message TopEntry {
+  string key   = 1;
+  int64  count = 2;
+}
+
+message TopResponse {
+  repeated TopEntry entries = 1;
+}
+
+message EngagementRequest {
+  int64          guild_id    = 1;
+  optional int64 user_id     = 2;
+  TimeRange      time_range  = 3;
+  string         granularity = 4;
+}
+
+message EngagementBucket {
+  int64 timestamp_ms      = 1;
+  int64 message_count     = 2;
+  int64 interaction_count = 3;
+}
+
+message EngagementResponse {
+  repeated EngagementBucket buckets = 1;
+}
